@@ -41,22 +41,22 @@ class SQLAlchemy(BaseSQLAlchemy):
             print(e)
             raise e
         # finally:
-        #     self.session.close()        
+        #     self.session.close()
 
 
 #路径设置
-SQL_PATH = os.path.join(os.path.dirname(__file__),'../../public/sql')
+# SQL_PATH = os.path.join(os.path.dirname(__file__),'../../public/sql')
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'   #本地
-app.config['SQLALCHEMY_DATABASE_URI'] =  'sqlite:///'+os.path.join(SQL_PATH,'kamifaka.db')   #默认数据库
+# app.config['SQLALCHEMY_DATABASE_URI'] =  'sqlite:///'+os.path.join(SQL_PATH,'kamifaka.db')   #默认数据库
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@127.0.0.1:336/KAFAKA?charset=utf8mb4'   #本地Docker
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://faka:xxxxx@154:3306/faka?charset=utf8mb4'   #远程
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:qwer.2023@47.117.86.213:3306/kamifaka?charset=utf8mb4'   #远程
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://docker_db_1:root@127.0.0.1:3306/KAFAKA?charset=utf8mb4'   #本地
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://root:password@127.0.0.1:5432/KAFAKA'   #本地
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres+psycopg2://cmmpjjkinayyhk:2428996ef24132a272c88374071448af13aa3169ac551492e7046b264876080a@ec2-52-2-82-109.compute-1.amazonaws.com:5432/deail3ojvojiia'   #远程
 # docker run --name postgres -e POSTGRES_PASSWORD=password -e POSTGRES_USER=root -e POSTGRES_DB=KAFAKA -p 5432:5432 -d postgres
 
-app.config['SQLALCHEMY_BINDS'] =  {'order':'sqlite:///'+os.path.join(SQL_PATH,'middle.db')}   #中间转移数据库
+# app.config['SQLALCHEMY_BINDS'] =  {'order':'sqlite:///'+os.path.join(SQL_PATH,'middle.db')}   #中间转移数据库
 # mysql mysql+pymysql://root:wujing0126@127.0.0.1:3306/gbs?charset=utf8
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Setup the Flask-JWT-Extended extension. Read more: https://flask-jwt-extended.readthedocs.io/en/stable/options/
